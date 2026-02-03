@@ -1,5 +1,5 @@
 import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Linkedin } from "lucide-react";
-import logoSoma from "@/assets/logo-soma.png";
+import logoMixrei from "@/assets/logo-mixrei.png";
 
 interface FooterProps {
   address?: string | null;
@@ -47,9 +47,9 @@ const Footer = ({ address }: FooterProps) => {
           <div>
             <div className="mb-6">
               <img
-                src={logoSoma}
-                alt="Soma Concretos"
-                className="h-12 w-auto object-contain"
+                src={logoMixrei}
+                alt="Mix Rei Concreto Usinado"
+                className="h-[3.6rem] w-auto object-contain"
               />
             </div>
             <p className="text-secondary-foreground/70 mb-6">
