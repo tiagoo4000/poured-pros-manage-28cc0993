@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Phone } from "lucide-react";
-import logoSoma from "@/assets/logo-soma.png";
+import logoMixrei from "@/assets/logo-mixrei.png";
 
 interface HeaderProps {
   logoUrl?: string | null;
@@ -36,7 +36,7 @@ const Header = ({ logoUrl }: HeaderProps) => {
   ];
 
   // Use uploaded logo if no custom logo from admin
-  const displayLogo = logoUrl || logoSoma;
+  const displayLogo = logoUrl || logoMixrei;
 
   return (
     <header
@@ -52,8 +52,8 @@ const Header = ({ logoUrl }: HeaderProps) => {
           <div className="flex items-center">
             <img
               src={displayLogo}
-              alt="Soma Concretos"
-              className="h-14 w-auto object-contain"
+              alt="Mix Rei Concreto Usinado"
+              className="h-[4.2rem] w-auto object-contain"
             />
           </div>
 
