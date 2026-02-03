@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Phone } from "lucide-react";
+import logoSoma from "@/assets/logo-soma.png";
 
 interface HeaderProps {
   logoUrl?: string | null;
@@ -34,6 +35,9 @@ const Header = ({ logoUrl }: HeaderProps) => {
     { label: "Contato", id: "contato" },
   ];
 
+  // Use uploaded logo if no custom logo from admin
+  const displayLogo = logoUrl || logoSoma;
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -46,22 +50,11 @@ const Header = ({ logoUrl }: HeaderProps) => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center">
-            {logoUrl ? (
-              <img
-                src={logoUrl}
-                alt="Logo da empresa"
-                className="h-12 w-auto object-contain"
-              />
-            ) : (
-              <div className="flex items-center gap-2">
-                <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                  <span className="text-primary-foreground font-display text-xl font-bold">C</span>
-                </div>
-                <span className="font-display text-2xl text-primary-foreground tracking-wide">
-                  CONCRETEC
-                </span>
-              </div>
-            )}
+            <img
+              src={displayLogo}
+              alt="Soma Concretos"
+              className="h-14 w-auto object-contain"
+            />
           </div>
 
           {/* Desktop Navigation */}
@@ -85,7 +78,7 @@ const Header = ({ logoUrl }: HeaderProps) => {
               onClick={() => scrollToSection("contato")}
             >
               <Phone className="w-4 h-4" />
-              Solicitar Orçamento
+              Fale Conosco
             </Button>
           </div>
 
@@ -120,7 +113,7 @@ const Header = ({ logoUrl }: HeaderProps) => {
                   onClick={() => scrollToSection("contato")}
                 >
                   <Phone className="w-4 h-4" />
-                  Solicitar Orçamento
+                  Fale Conosco
                 </Button>
               </div>
             </nav>

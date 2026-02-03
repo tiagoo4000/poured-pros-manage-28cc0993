@@ -1,4 +1,5 @@
 import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Linkedin } from "lucide-react";
+import logoSoma from "@/assets/logo-soma.png";
 
 interface FooterProps {
   address?: string | null;
@@ -44,13 +45,12 @@ const Footer = ({ address }: FooterProps) => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div>
-            <div className="flex items-center gap-2 mb-6">
-              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-display text-xl font-bold">C</span>
-              </div>
-              <span className="font-display text-2xl text-secondary-foreground tracking-wide">
-                CONCRETEC
-              </span>
+            <div className="mb-6">
+              <img
+                src={logoSoma}
+                alt="Soma Concretos"
+                className="h-12 w-auto object-contain"
+              />
             </div>
             <p className="text-secondary-foreground/70 mb-6">
               Fornecemos concreto usinado de alta qualidade para obras residenciais, 
@@ -121,10 +121,10 @@ const Footer = ({ address }: FooterProps) => {
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-primary shrink-0" />
                 <a
-                  href="mailto:contato@concretec.com.br"
+                  href="mailto:contato@somaconcretos.com.br"
                   className="text-secondary-foreground/70 hover:text-primary transition-colors"
                 >
-                  contato@concretec.com.br
+                  contato@somaconcretos.com.br
                 </a>
               </li>
               <li className="flex items-start gap-3">
@@ -145,7 +145,7 @@ const Footer = ({ address }: FooterProps) => {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-secondary-foreground/50 text-sm text-center md:text-left">
-              © {currentYear} Concretec. Todos os direitos reservados.
+              © {currentYear} Soma Concretos Ltda. Todos os direitos reservados.
             </p>
             <div className="flex gap-6 text-sm text-secondary-foreground/50">
               <a href="#" className="hover:text-primary transition-colors">
