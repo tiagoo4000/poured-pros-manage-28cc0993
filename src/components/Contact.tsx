@@ -11,8 +11,8 @@ const Contact = () => {
     {
       icon: Mail,
       label: "E-mail",
-      value: "contato@somaconcretos.com.br",
-      href: "mailto:contato@somaconcretos.com.br",
+      value: "contato@mixreiconcretousinado.com",
+      href: "mailto:contato@mixreiconcretousinado.com",
     },
     {
       icon: MapPin,
