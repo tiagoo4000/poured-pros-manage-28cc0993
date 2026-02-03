@@ -106,16 +106,16 @@ const Footer = ({ address }: FooterProps) => {
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                 <span className="text-secondary-foreground/70">
-                  {address || "Rua da Construção, 123 - Centro, Cidade - SP"}
+                  {address || "Rua Cantagalo 55, Vila Sacadura Cabral, Santo André - SP, 09060-720"}
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-primary shrink-0" />
                 <a
-                  href="tel:+5511999999999"
+                  href="tel:08002880065"
                   className="text-secondary-foreground/70 hover:text-primary transition-colors"
                 >
-                  (11) 9999-9999
+                  0800 288 0065
                 </a>
               </li>
               <li className="flex items-center gap-3">
@@ -145,7 +145,7 @@ const Footer = ({ address }: FooterProps) => {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-secondary-foreground/50 text-sm text-center md:text-left">
-              © {currentYear} Mix Rei Concreto Usinado. Todos os direitos reservados.
+              © {currentYear} Mix Rei Concreto Usinado. CNPJ: 31.032.884/0003-51. Todos os direitos reservados.
             </p>
             <div className="flex gap-6 text-sm text-secondary-foreground/50">
               <a href="#" className="hover:text-primary transition-colors">
