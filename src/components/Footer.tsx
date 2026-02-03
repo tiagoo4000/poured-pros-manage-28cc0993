@@ -145,7 +145,7 @@ const Footer = ({ address }: FooterProps) => {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-secondary-foreground/50 text-sm text-center md:text-left">
-              © {currentYear} Soma Concretos Ltda. Todos os direitos reservados.
+              © {currentYear} Mix Rei Concreto Usinado. Todos os direitos reservados.
             </p>
             <div className="flex gap-6 text-sm text-secondary-foreground/50">
               <a href="#" className="hover:text-primary transition-colors">
