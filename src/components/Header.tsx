@@ -53,7 +53,7 @@ const Header = ({ logoUrl }: HeaderProps) => {
             <img
               src={displayLogo}
               alt="Mix Rei Concreto Usinado"
-              className="h-[8.4rem] w-auto object-contain"
+              className="h-[11rem] w-auto object-contain"
             />
           </div>
 
