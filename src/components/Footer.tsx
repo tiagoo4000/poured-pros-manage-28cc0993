@@ -49,7 +49,7 @@ const Footer = ({ address }: FooterProps) => {
               <img
                 src={logoMixrei}
                 alt="Mix Rei Concreto Usinado"
-                className="h-[3.6rem] w-auto object-contain"
+                className="h-[7.2rem] w-auto object-contain"
               />
             </div>
             <p className="text-secondary-foreground/70 mb-6">
