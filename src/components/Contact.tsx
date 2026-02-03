@@ -71,13 +71,18 @@ const Contact = () => {
             ))}
           </div>
 
-          {/* Map placeholder */}
-          <div className="bg-secondary rounded-2xl h-80 flex items-center justify-center">
-            <div className="text-center">
-              <MapPin className="w-16 h-16 text-primary mx-auto mb-4" />
-              <p className="text-secondary-foreground text-lg">Mapa de Localização</p>
-              <p className="text-secondary-foreground/60 text-sm mt-2">Rua Cantagalo 55, Vila Sacadura Cabral, Santo André - SP</p>
-            </div>
+          {/* Google Maps */}
+          <div className="rounded-2xl overflow-hidden h-80">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!4v1770143902112!6m8!1m7!1s07KQWbQc67VJBNapAluBOA!2m2!1d-23.65942130450212!2d-46.55551936770427!3f246.76353586025252!4f4.085677681082686!5f0.7820865974627469" 
+              width="100%" 
+              height="100%" 
+              style={{ border: 0 }} 
+              allowFullScreen 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Localização Mix Rei Concreto"
+            />
           </div>
         </div>
       </div>
