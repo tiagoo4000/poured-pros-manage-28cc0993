@@ -5,8 +5,8 @@ const Contact = () => {
     {
       icon: Phone,
       label: "Telefone",
-      value: "(11) 9999-9999",
-      href: "tel:+5511999999999",
+      value: "0800 288 0065",
+      href: "tel:08002880065",
     },
     {
       icon: Mail,
@@ -17,7 +17,7 @@ const Contact = () => {
     {
       icon: MapPin,
       label: "Endereço",
-      value: "Rua da Construção, 123 - Centro",
+      value: "Rua Cantagalo 55, Vila Sacadura Cabral, Santo André - SP, 09060-720",
     },
     {
       icon: Clock,
@@ -76,7 +76,7 @@ const Contact = () => {
             <div className="text-center">
               <MapPin className="w-16 h-16 text-primary mx-auto mb-4" />
               <p className="text-secondary-foreground text-lg">Mapa de Localização</p>
-              <p className="text-secondary-foreground/60 text-sm mt-2">Rua da Construção, 123 - Centro</p>
+              <p className="text-secondary-foreground/60 text-sm mt-2">Rua Cantagalo 55, Vila Sacadura Cabral, Santo André - SP</p>
             </div>
           </div>
         </div>

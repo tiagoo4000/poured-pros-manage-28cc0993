@@ -23,7 +23,7 @@ interface SiteSettings {
 
 const Index = () => {
   const [settings, setSettings] = useState<SiteSettings>({
-    whatsapp_number: "5511999999999", // Default number
+    whatsapp_number: "08002880065", // Default number
     logo_url: null,
     company_address: null,
   });
