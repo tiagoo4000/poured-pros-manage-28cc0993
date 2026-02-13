@@ -5,9 +5,10 @@ import logoMixrei from "@/assets/logo-mixrei.png";
 
 interface HeaderProps {
   logoUrl?: string | null;
+  whatsappNumber?: string | null;
 }
 
-const Header = ({ logoUrl }: HeaderProps) => {
+const Header = ({ logoUrl, whatsappNumber }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -75,10 +76,16 @@ const Header = ({ logoUrl }: HeaderProps) => {
             <Button
               variant="hero"
               size="lg"
-              onClick={() => scrollToSection("contato")}
+              asChild
             >
-              <Phone className="w-4 h-4" />
-              Fale Conosco
+              <a
+                href={whatsappNumber ? `https://wa.me/${whatsappNumber.replace(/\D/g, "")}?text=${encodeURIComponent("Olá! Gostaria de solicitar um orçamento de concreto usinado.")}` : "#contato"}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Phone className="w-4 h-4" />
+                Fale Conosco
+              </a>
             </Button>
           </div>
 
@@ -110,10 +117,16 @@ const Header = ({ logoUrl }: HeaderProps) => {
                   variant="hero"
                   size="lg"
                   className="w-full"
-                  onClick={() => scrollToSection("contato")}
+                  asChild
                 >
-                  <Phone className="w-4 h-4" />
-                  Fale Conosco
+                  <a
+                    href={whatsappNumber ? `https://wa.me/${whatsappNumber.replace(/\D/g, "")}?text=${encodeURIComponent("Olá! Gostaria de solicitar um orçamento de concreto usinado.")}` : "#contato"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Phone className="w-4 h-4" />
+                    Fale Conosco
+                  </a>
                 </Button>
               </div>
             </nav>
