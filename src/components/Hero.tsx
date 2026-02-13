@@ -2,13 +2,21 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Phone } from "lucide-react";
 import heroImage from "@/assets/hero-concrete.jpg";
 
-const Hero = () => {
+interface HeroProps {
+  whatsappNumber?: string | null;
+}
+
+const Hero = ({ whatsappNumber }: HeroProps) => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  const whatsappUrl = whatsappNumber
+    ? `https://wa.me/${whatsappNumber.replace(/\D/g, "")}?text=${encodeURIComponent("Olá! Gostaria de solicitar um orçamento de concreto usinado.")}`
+    : "#contato";
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center">
@@ -45,10 +53,12 @@ const Hero = () => {
             <Button
               variant="hero"
               size="xl"
-              onClick={() => scrollToSection("contato")}
+              asChild
             >
-              <Phone className="w-5 h-5" />
-              Solicitar Orçamento
+              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                <Phone className="w-5 h-5" />
+                Solicitar Orçamento
+              </a>
             </Button>
             <Button
               variant="heroOutline"

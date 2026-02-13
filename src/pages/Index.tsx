@@ -58,8 +58,8 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
-      <Header logoUrl={settings.logo_url} />
-      <Hero />
+      <Header logoUrl={settings.logo_url} whatsappNumber={settings.whatsapp_number} />
+      <Hero whatsappNumber={settings.whatsapp_number} />
       <About />
       <Services />
       <Benefits />
