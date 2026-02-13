@@ -7,7 +7,14 @@ import {
   FileCheck 
 } from "lucide-react";
 
-const Benefits = () => {
+interface BenefitsProps {
+  whatsappNumber?: string | null;
+}
+
+const Benefits = ({ whatsappNumber }: BenefitsProps) => {
+  const whatsappUrl = whatsappNumber
+    ? `https://wa.me/${whatsappNumber.replace(/\D/g, "")}?text=${encodeURIComponent("Olá! Gostaria de solicitar um orçamento de concreto usinado.")}`
+    : "#contato";
   const benefits = [
     {
       icon: FlaskConical,
@@ -96,7 +103,9 @@ const Benefits = () => {
             Nossa equipe está pronta para atender você.
           </p>
           <a
-            href="#contato"
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg font-semibold hover:scale-105 transition-transform shadow-orange"
           >
             Solicitar Orçamento Agora

@@ -61,8 +61,8 @@ const Index = () => {
       <Header logoUrl={settings.logo_url} whatsappNumber={settings.whatsapp_number} />
       <Hero whatsappNumber={settings.whatsapp_number} />
       <About />
-      <Services />
-      <Benefits />
+      <Services whatsappNumber={settings.whatsapp_number} />
+      <Benefits whatsappNumber={settings.whatsapp_number} />
       <Contact />
       <Footer address={settings.company_address} />
       <WhatsAppButton phoneNumber={settings.whatsapp_number} />
