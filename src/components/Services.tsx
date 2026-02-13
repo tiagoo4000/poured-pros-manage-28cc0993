@@ -4,13 +4,14 @@ import serviceConcrete from "@/assets/service-concrete.jpg";
 import serviceBombeado from "@/assets/service-bombeado.jpg";
 import serviceComercial from "@/assets/service-comercial.jpg";
 
-const Services = () => {
-  const scrollToContact = () => {
-    const element = document.getElementById("contato");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+interface ServicesProps {
+  whatsappNumber?: string | null;
+}
+
+const Services = ({ whatsappNumber }: ServicesProps) => {
+  const whatsappUrl = whatsappNumber
+    ? `https://wa.me/${whatsappNumber.replace(/\D/g, "")}?text=${encodeURIComponent("Olá! Gostaria de solicitar um orçamento de concreto usinado.")}`
+    : "#contato";
 
   const services = [
     {
@@ -94,10 +95,12 @@ const Services = () => {
                 <Button
                   variant="outline"
                   className="w-full group/btn"
-                  onClick={scrollToContact}
+                  asChild
                 >
-                  Solicitar Orçamento
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
+                  <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                    Solicitar Orçamento
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
+                  </a>
                 </Button>
               </div>
             </div>
