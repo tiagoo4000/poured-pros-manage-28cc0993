@@ -5,8 +5,8 @@ const Contact = () => {
     {
       icon: Phone,
       label: "Telefone",
-      value: "0800 288 0065",
-      href: "tel:08002880065",
+      value: "800 288 0065",
+      href: "tel:8002880065",
     },
     {
       icon: Mail,
