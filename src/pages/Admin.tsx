@@ -14,8 +14,10 @@ import {
   Trash2, 
   Save,
   Home,
-  Settings
+  Settings,
+  Newspaper
 } from "lucide-react";
+import AdminBlogManager from "@/components/admin/AdminBlogManager";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 
@@ -30,6 +32,7 @@ interface SiteSettingsData {
   whatsapp_numbers: WhatsAppNumber[];
   logo_url: string | null;
   company_address: string | null;
+  blog_enabled: boolean;
 }
 
 const Admin = () => {
@@ -83,6 +86,7 @@ const Admin = () => {
           whatsapp_numbers: ((data.whatsapp_numbers as unknown) as WhatsAppNumber[]) || [],
           logo_url: data.logo_url,
           company_address: data.company_address,
+          blog_enabled: (data as any).blog_enabled ?? false,
         });
         if (data.logo_url) {
           setLogoPreview(data.logo_url);
@@ -182,7 +186,8 @@ const Admin = () => {
           whatsapp_numbers: JSON.parse(JSON.stringify(settings.whatsapp_numbers)),
           logo_url: logoUrl,
           company_address: settings.company_address,
-        })
+          blog_enabled: settings.blog_enabled,
+        } as any)
         .eq("id", settings.id);
 
       if (error) throw error;
@@ -337,6 +342,39 @@ const Admin = () => {
                   </p>
                 </div>
               </div>
+            </CardContent>
+          </Card>
+
+          {/* Blog Settings */}
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Newspaper className="w-5 h-5 text-primary" />
+                Blog
+              </CardTitle>
+              <CardDescription>
+                Ative o modo blog para transformar o site em um blog informativo sobre concreto.
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div className="flex items-center justify-between p-4 bg-muted rounded-lg">
+                <div>
+                  <p className="font-medium">Modo Blog</p>
+                  <p className="text-sm text-muted-foreground">
+                    {settings?.blog_enabled
+                      ? "O site está exibindo o blog. Desative para voltar ao site normal."
+                      : "Ative para transformar o site em um blog."}
+                  </p>
+                </div>
+                <Switch
+                  checked={settings?.blog_enabled ?? false}
+                  onCheckedChange={(checked) =>
+                    setSettings(settings ? { ...settings, blog_enabled: checked } : null)
+                  }
+                />
+              </div>
+
+              {settings?.blog_enabled && <AdminBlogManager />}
             </CardContent>
           </Card>
 
