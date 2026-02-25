@@ -14,8 +14,48 @@ export type Database = {
   }
   public: {
     Tables: {
+      blog_posts: {
+        Row: {
+          author_id: string
+          content: string
+          cover_image_url: string | null
+          created_at: string
+          excerpt: string | null
+          id: string
+          published: boolean
+          slug: string
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          author_id: string
+          content: string
+          cover_image_url?: string | null
+          created_at?: string
+          excerpt?: string | null
+          id?: string
+          published?: boolean
+          slug: string
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          author_id?: string
+          content?: string
+          cover_image_url?: string | null
+          created_at?: string
+          excerpt?: string | null
+          id?: string
+          published?: boolean
+          slug?: string
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       site_settings: {
         Row: {
+          blog_enabled: boolean
           company_address: string | null
           created_at: string
           id: string
@@ -24,6 +64,7 @@ export type Database = {
           whatsapp_numbers: Json | null
         }
         Insert: {
+          blog_enabled?: boolean
           company_address?: string | null
           created_at?: string
           id?: string
@@ -32,6 +73,7 @@ export type Database = {
           whatsapp_numbers?: Json | null
         }
         Update: {
+          blog_enabled?: boolean
           company_address?: string | null
           created_at?: string
           id?: string
